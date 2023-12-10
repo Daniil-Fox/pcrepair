@@ -311,6 +311,7 @@ a {
 @media (max-width: 576px) {
   .swiper-pagination-progress {
     max-width: 37.2rem;
+    top: 3.2rem;
   }
 }
 
