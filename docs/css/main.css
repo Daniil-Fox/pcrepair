@@ -1240,6 +1240,12 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
 }
+@media (max-width: 576px) {
+  .modal__close {
+    top: 1.6rem;
+    right: 1.6rem;
+  }
+}
 .modal__window {
   position: relative;
   width: 135.3rem;

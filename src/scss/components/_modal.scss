@@ -34,6 +34,11 @@
       background-size: cover;
       background-repeat: no-repeat;
     }
+
+    @include mobile {
+      top: 1.6rem;
+      right: 1.6rem;
+    }
   }
 
   &__window {
