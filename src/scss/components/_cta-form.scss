@@ -1,0 +1,133 @@
+.cta-form {
+
+  margin: 8rem 0;
+  border: .1rem solid var(--blue-color);
+  background: #FFF;
+
+  @include mobile {
+    margin: 3.2rem 0;
+  }
+
+  &__title {
+    padding: 2.4rem;
+    background-color: var(--blue-color);
+    margin: 0;
+    width: 100%;
+    color: var(--white-color);
+    text-align: center;
+    font-family: 'Noto Sans JP';
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 132%;
+    letter-spacing: 0.024rem;
+
+    @include mobile {
+      font-size: 1.6rem;
+      letter-spacing: 0.016rem;
+      padding: 2rem 3.1rem;
+    }
+  }
+
+  &__wrapper {
+    flex-grow: 1;
+    margin-bottom: 6rem;
+    padding: 6rem;
+    padding-top: 8.8rem;
+    padding-bottom: 2rem;
+    padding-bottom: 10rem;
+
+    @include mobile {
+      padding: 0 1.6rem;
+      padding-top: 7.2rem;
+    }
+  }
+
+  &__que {
+    margin: 0;
+    margin-bottom: 6rem;
+    color: var(--black-color);
+    font-family: 'Russo One';
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 132%;
+    letter-spacing: 0.048rem;
+
+    @include mobile {
+      font-size: 2rem;
+      letter-spacing: normal;
+      max-width: 22.5rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__input {
+    max-width: 43rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.2rem 6rem;
+
+    &--gap {
+      margin-bottom: 3.2rem;
+    }
+
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  &__board {
+    height: 100%;
+    padding: 6rem;
+
+    padding-bottom: 10rem;
+    padding-right: 26rem;
+    background: #FFF;
+    box-shadow: 0rem 0rem 1.8rem 0rem rgba(4, 0, 48, 1.18);
+
+    @include mobile {
+      padding: 1.2rem;
+      padding-right: 2.4rem;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.6rem;
+    color: var(--black-color);
+    font-family: 'Noto Sans JP';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132%;
+
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    padding: 2.4rem 7.2rem;
+    width: 29.6rem;
+
+    &.disable {
+      pointer-events: none;
+      cursor: default;
+      background-color: #d1d1d1b6;
+    }
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+}

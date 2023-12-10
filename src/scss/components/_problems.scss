@@ -1,0 +1,307 @@
+.problems {
+  padding-bottom: 8rem;
+
+  @include mobile {
+    padding-bottom: 3.2rem;
+  }
+
+  .line {
+    margin-bottom: 8rem;
+
+    @include mobile {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+
+    &.active {
+      grid-template-columns: repeat(3, 1fr);
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
+      .problems-items {}
+
+      .problems__item {}
+    }
+  }
+
+  &__item {
+    // grid-column: 3 span;
+    padding: 3.2rem 4rem;
+    position: relative;
+    overflow: hidden;
+
+    @include mobile {
+      padding: 1.6rem 2rem;
+    }
+
+    &.active {
+      &::before {
+        transform: translateY(0);
+      }
+
+      .problems-item__title {
+        color: var(--white-color);
+      }
+
+      .problems-item__icon {
+        svg {
+          stroke: var(--white-color);
+        }
+      }
+
+      .problems-item__btn {
+        transform: rotateX(180deg);
+        background-color: var(--white-color);
+
+        svg {
+          fill: var(--blue-color);
+        }
+
+        @include mobile {
+          transform: rotateX(0deg);
+        }
+      }
+    }
+
+    &:hover {
+      &::before {
+        transform: translateY(0);
+      }
+
+      .problems-item__title {
+        color: var(--white-color);
+      }
+
+      .problems-item__icon {
+        svg {
+          stroke: var(--white-color);
+        }
+      }
+
+      .problems-item__btn {
+        background-color: var(--white-color);
+
+        svg {
+          fill: var(--blue-color);
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background-color: var(--blue-color);
+      transform: translateY(110%);
+
+      transition: transform .3s ease-out;
+    }
+  }
+
+  &__col {
+    grid-column: 1 span;
+  }
+
+  &__sol {
+    display: none;
+    transition: transform .3s ease-in;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.problems-item {
+  border: 1px solid var(--blue-color);
+
+  @include mobile {
+    &:not(:last-child) {
+      border-bottom: 0.05rem solid var(--blue-color);
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3.2rem;
+
+    @include mobile {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 5.2rem;
+    height: 5.2rem;
+    background-color: var(--blue-color);
+    transition: background-color .3s ease-in, transform .3s ease-in;
+
+    @include mobile {
+      width: 3.6rem;
+      height: 3.6rem;
+
+      transform: rotate(180deg);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      fill: var(--white-color);
+
+      transition: fill .3s ease-in;
+    }
+  }
+
+  &__icon {
+    width: 5.2rem;
+    height: 5.2rem;
+
+    @include mobile {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--blue-color);
+      transition: fill .3s ease-in;
+    }
+
+    svg.nofill {
+      fill: none;
+      stroke: var(--blue-color);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--black-color);
+    font-family: 'Noto Sans JP';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    text-transform: uppercase;
+
+    transition: color .3s ease-in;
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.problems-content {
+  margin-left: 3.6rem;
+  display: none;
+  padding: 3.6rem 3.2rem;
+  background: var(--white-color);
+  box-shadow: .1rem .1rem 1.8rem 0rem rgba(4, 0, 48, 0.20);
+
+  @include mobile {
+    margin-left: 0;
+    padding: 2rem 1.6rem;
+  }
+
+  &.active {
+    display: block;
+  }
+
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    max-width: 35rem;
+    color: var(--blue-color);
+    text-align: center;
+    font-family: 'Noto Sans JP';
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @include mobile {
+      font-size: 2rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__list {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+
+    @include mobile {
+      padding-bottom: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    color: var(--black-color);
+    font-family: ' Noto Sans JP';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1.2rem;
+    }
+
+    span {
+      font-weight: 700;
+      color: var(--blue-color)
+    }
+
+    &>svg {
+      flex-shrink: 0;
+      width: 4rem;
+      height: 4rem;
+      stroke: var(--blue-color);
+      fill: none;
+
+      path {
+        stroke: var(--blue-color);
+      }
+
+      @include mobile {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+  }
+
+  &__btn {
+    display: block;
+    padding: 2.4rem 0;
+    width: 29.6rem;
+    margin: 0 auto;
+
+    @include mobile {
+      width: 26.3rem;
+      padding: 1.6rem;
+    }
+  }
+}

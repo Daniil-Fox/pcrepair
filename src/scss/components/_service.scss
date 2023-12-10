@@ -1,0 +1,188 @@
+.service {
+  padding-bottom: 8rem;
+
+  @include mobile {
+    padding-bottom: 3.2rem;
+  }
+
+  .line {
+    margin-bottom: 8rem;
+
+    @include mobile {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  .swiper-slide {
+    @include mobile {
+      height: auto;
+      width: auto;
+    }
+  }
+
+  &__slider {
+    width: auto;
+    overflow: visible;
+
+    @include mobile {
+      overflow: hidden;
+    }
+  }
+
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 58rem);
+    grid-template-rows: repeat(2, 35.9rem);
+    gap: 2.4rem;
+    padding-right: 14.5rem;
+    width: auto;
+
+    @include mobile {
+      width: 100%;
+      display: flex;
+      gap: unset;
+      padding-right: unset;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    margin-bottom: 8rem;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__btn {
+    padding: 2.4rem;
+    flex: 1;
+    color: var(--blue-color);
+    font-family: 'Russo One';
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.028rem;
+    text-transform: uppercase;
+
+    border: .1rem solid var(--blue-color);
+    background: var(--white-color);
+
+    transition: color .3s ease-in, background-color .3s ease-in;
+
+    @include mobile {
+      border: 0.05rem solid var(--blue-color);
+      font-size: 1.6rem;
+      padding: 1.6rem;
+    }
+
+    &:nth-child(2) {
+      border-right: none;
+      border-left: none;
+
+      @include mobile {
+        border: 0.05rem solid var(--blue-color);
+      }
+    }
+
+    &:hover {
+      background-color: var(--blue-color);
+      color: var(--white-color);
+    }
+
+    @include mobile {
+      width: 100%;
+      flex: unset;
+    }
+  }
+
+  &__image {
+    height: 42.7rem;
+    flex-shrink: 0;
+    margin: 0 4.4rem;
+
+    img {
+      height: 100%;
+    }
+
+    @include mobile {
+      height: 17.2rem;
+      margin-left: 11.8rem;
+      margin-right: 0;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+
+  &__container {
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.service-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: .1rem solid var(--blue-color);
+  background: var(--white-color);
+  box-shadow: 0rem .4rem 2.5rem 0rem rgba(0, 0, 0, 0.10);
+  padding: 0 2.8rem;
+
+  @include mobile {
+    padding: 2.4rem;
+    width: 36rem;
+    margin: 0 1.2rem;
+  }
+
+  &>h3 {
+    margin: 0;
+    margin-bottom: 4rem;
+    color: var(--blue-color);
+    text-align: center;
+    font-family: 'Noto Sans JP';
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @include mobile {
+      font-size: 2rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__btn {
+    padding: 2.4rem 7.2rem;
+    border: .1rem solid var(--blue-color);
+
+    color: var(--blue-color);
+    text-align: center;
+    font-family: 'Noto Sans JP';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @include mobile {
+      padding: 1.6rem 4rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.service-pagination {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}

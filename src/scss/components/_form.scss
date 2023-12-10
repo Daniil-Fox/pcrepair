@@ -1,0 +1,159 @@
+.form {
+  &__title {
+    margin: 0;
+    margin-bottom: 1.6rem;
+    color: var(--black-color);
+    font-family: 'Russo One';
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.032rem;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 2rem;
+      letter-spacing: 0.02rem;
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &__radio {
+    display: none;
+
+    &:checked {
+      &+.form__fake-radio {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__fake-radio {
+    cursor: pointer;
+    display: inline-block;
+    width: 2.8rem;
+    height: 2.8rem;
+    border: .4rem solid var(--blue-color);
+    border-radius: 100%;
+    position: relative;
+    flex-shrink: 0;
+
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      background-color: var(--blue-color);
+      border-radius: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity .2s ease-out;
+    }
+  }
+
+  &__desc {
+    max-width: 32rem;
+    margin: 0;
+    margin-bottom: 4rem;
+    color: var(--black-color);
+    font-family: 'Noto Sans JP';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem;
+
+    @include mobile {
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+
+  }
+
+  &__inputs {
+    margin-bottom: 4rem;
+  }
+
+  &__input {
+    width: 100%;
+    height: 6.4rem;
+    padding: 2rem 1.6rem;
+    border: none;
+    border-bottom: .1rem solid #9F9F9F;
+    background: var(--white-color);
+
+    @include mobile {
+      height: 4.8rem;
+      padding: 1.2rem 1.6rem;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin-bottom: 2.4rem;
+    width: 100%;
+    height: 6.1rem;
+    padding: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-color);
+    text-align: center;
+    font-family: 'Noto Sans JP';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    border: .1rem solid var(--blue-color);
+  }
+
+  &__policy {
+    width: 100%;
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black-color);
+    font-family: 'Noto Sans JP';
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-right: .8rem;
+      height: 2.4rem;
+      width: 2.4rem;
+      background-image: url('./../img/lock-icon.svg');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @include mobile {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    @include mobile {
+      font-size: 0.8rem;
+    }
+  }
+}

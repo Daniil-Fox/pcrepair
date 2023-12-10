@@ -1,0 +1,160 @@
+.price {
+  padding-bottom: 8rem;
+
+  @include mobile {
+    padding-bottom: 3.2rem;
+  }
+
+  .line {
+    margin-bottom: 8rem;
+
+    @include mobile {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+
+
+}
+
+.price-list__wrapper {
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.price-list {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-height: 44.4rem;
+  margin-bottom: 2.4rem;
+  overflow: hidden;
+  will-change: max-height;
+  transition: max-height .4s ease-in;
+
+  @include mobile {
+    max-height: 32rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+  }
+
+  tbody {
+    display: block;
+    width: 100%;
+  }
+
+  th {
+    width: 100%;
+    text-align: center;
+    color: var(--white-color);
+    font-family: 'Russo One';
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.032rem;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 1.8rem;
+      letter-spacing: normal;
+    }
+  }
+
+  tr {
+    padding: 2.4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #FFF;
+
+    &:not(:first-child) {
+      border-bottom: 1px dashed var(--blue-color);
+    }
+
+    &:first-child {
+      background-color: var(--blue-color);
+    }
+
+    @include mobile {
+      padding: 1.6rem 2rem;
+    }
+  }
+
+  &__name {
+    color: var(--black-color);
+    font-family: 'Noto Sans JP';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+
+    @include mobile {
+      font-size: 1.6rem;
+      max-width: 26.4rem;
+    }
+  }
+
+  &__price {
+    color: #000;
+    text-align: right;
+    font-family: 'Noto Sans JP';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    width: 6.2rem;
+    height: 6.2rem;
+    transition: transform .3s ease-in;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 30%;
+      height: 30%;
+      transform: rotate(45deg);
+      border-right: .1rem solid var(--blue-color);
+      border-bottom: .1rem solid var(--blue-color);
+    }
+
+    @include mobile {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  &.active {
+    &::before {
+      display: none;
+    }
+
+    &+.price-list__more {
+      transform: rotateX(180deg);
+    }
+  }
+}

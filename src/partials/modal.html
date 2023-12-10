@@ -1,0 +1,26 @@
+<div class="modal">
+  <div class="modal__window">
+    <form class="modal__form form">
+      <h3 class="form__title">Оставьте ваши контактные данные</h3>
+      <p class="form__desc">и наш спецалист свяжется с вами в течении 30 минут</p>
+      <div class="form__inputs">
+        <label class="form__label">
+          <input type="text" class="form__input" placeholder="Имя">
+        </label>
+        <label class="form__label">
+          <input type="tel" data-type="tel" class="form__input form__input--tel" placeholder="Номер телефона">
+        </label>
+      </div>
+      <button type="submit" class="form__btn btn btn-reset">Отправить</button>
+      <span class="form__policy">Ваши данные никогда не будут переданы третьим лицам</span>
+    </form>
+    <div class="modal__image">
+      <picture>
+        <source srcset="./img/modal-pic-2x.webp" media="(min-width: 1920px)">
+        <source srcset="./img/modal-pic.webp">
+        <img src="./img/modal-pic.jpg" srcset="./img/modal-pic-2x.jpg" alt="Laptop">
+      </picture>
+    </div>
+    <button class="btn-reset modal__close"></button>
+  </div>
+</div>

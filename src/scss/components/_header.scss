@@ -1,0 +1,284 @@
+.header {
+  display: flex;
+  width: 100%;
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex: 1;
+    border-bottom: .1rem solid rgba(255, 255, 255, 0.24);
+    height: 8rem;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5.2rem 9.1rem;
+    color: var(--white-color);
+    font-family: 'Russo One';
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+    border-bottom: .1rem solid rgba(255, 255, 255, 0.24);
+
+    svg {
+      height: 4.8rem;
+      width: 11.3rem;
+      fill: var(--white-color);
+
+      @include mobile {
+        height: 2.5rem;
+        width: 9.7rem;
+
+      }
+    }
+
+    @include mobile {
+      flex: 1;
+      padding: 2.1rem 3.2rem;
+      font-size: 2rem;
+    }
+  }
+
+  &__contacts {
+    flex: 1;
+    display: none;
+    padding: 2.2rem 4.4rem;
+    border: .1rem solid rgba(255, 255, 255, 0.24);
+
+    @include mobile {
+      display: block;
+    }
+
+    &>a {
+      color: var(--white-color);
+      text-align: center;
+      font-family: 'Noto Sans JP';
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+
+  &__burger {
+    flex: 1;
+    display: none;
+    border-bottom: .1rem solid rgba(255, 255, 255, 0.24);
+    border-right: .1rem solid rgba(255, 255, 255, 0.24);
+    border-top: .1rem solid rgba(255, 255, 255, 0.24);
+    padding: 1.75rem 3.45rem;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__place {
+    width: 28.8rem;
+    padding: 2.4rem;
+    padding-left: 3.2rem;
+    border-top: .1rem solid rgba(255, 255, 255, 0.24);
+    border-left: .1rem solid rgba(255, 255, 255, 0.24);
+
+    &>span {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 1.2rem;
+      color: var(--white-color);
+      text-align: center;
+      font-family: 'Noto Sans JP';
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-image: url('./../img/hero/map-icon.svg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__search {
+
+    width: 48.2rem;
+    padding: 2rem 3.2rem;
+    border-top: .1rem solid rgba(255, 255, 255, 0.24);
+    border-left: .1rem solid rgba(255, 255, 255, 0.24);
+
+    &-label {
+      display: block;
+      width: 100%;
+      height: 4rem;
+
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 2.4rem;
+        width: 2.4rem;
+        left: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url('./../img/search-icon.svg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      &>input {
+        border-radius: 2.4rem;
+        padding: 0.8rem;
+        padding-left: 4.4rem;
+        border: none;
+        width: 100%;
+        height: 100%;
+
+        background: rgba(255, 255, 255, 0.20);
+
+        font-family: 'Noto Sans JP';
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.60);
+        }
+
+
+      }
+    }
+
+
+  }
+
+  &__call {
+    width: 55.9rem;
+    padding: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: .1rem solid rgba(255, 255, 255, 0.24);
+    border-left: .1rem solid rgba(255, 255, 255, 0.24);
+    position: relative;
+
+    &>a {
+      color: var(--white-color);
+      font-family: 'Plus Jakarta Sans';
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 3.2rem;
+      height: 3.2rem;
+      margin-right: 1.2rem;
+      background-image: url('./../img/phone-icon.svg');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    height: 100%;
+
+    border: .1rem solid rgba(255, 255, 255, 0.24);
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__link {
+    height: 100%;
+    border-left: .1rem solid rgba(255, 255, 255, 0.24);
+    border-bottom: .1rem solid rgba(255, 255, 255, 0.24);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    text-align: center;
+    font-family: 'Noto Sans JP';
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 100%;
+  border: .1rem solid rgba(255, 255, 255, 0.24);
+
+  &>svg {
+    fill: #fff;
+    width: 46%;
+    height: 46%;
+  }
+}

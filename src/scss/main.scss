@@ -1,0 +1,23 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/hero";
+@import "./components/nav";
+@import "./components/line";
+@import "./components/service";
+@import "./components/modal";
+@import "./components/form";
+@import "./components/problems";
+@import "./components/guarantee";
+@import "./components/popular";
+@import "./components/cta";
+@import "./components/cta-form";
+@import "./components/price";
+@import "./components/partners";
+@import "./components/cases";
+@import "./components/footer";
