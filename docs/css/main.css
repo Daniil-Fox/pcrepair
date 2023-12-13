@@ -2816,7 +2816,9 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFF;
+  background-color: #FFF;
+  -webkit-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
 }
 .price-list tr:not(:first-child) {
   border-bottom: 1px dashed var(--blue-color);
@@ -2827,6 +2829,11 @@ a {
 @media (max-width: 576px) {
   .price-list tr {
     padding: 1.6rem 2rem;
+  }
+}
+@media (any-hover: hover) {
+  .price-list tr:hover {
+    background-color: #CCE5F2;
   }
 }
 .price-list__name {
