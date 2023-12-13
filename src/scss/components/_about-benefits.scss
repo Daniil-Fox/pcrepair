@@ -28,6 +28,8 @@
   position: relative;
   width: 53.3rem;
   height: 100%;
+  background: #FFF;
+  box-shadow: -.8rem .8rem 1.8rem 0rem rgba(4, 0, 48, 0.16);
 
   @include mobile {
     padding: 3.2rem 0.6rem;

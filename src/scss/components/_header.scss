@@ -35,16 +35,41 @@
     letter-spacing: 0.04rem;
     text-transform: uppercase;
     border-bottom: .1rem solid rgba(255, 255, 255, 0.24);
+    position: relative;
+    overflow: hidden;
 
     svg {
+      position: relative;
+      z-index: 5;
       height: 4.8rem;
       width: 11.3rem;
       fill: var(--white-color);
+      transition: fill .3s ease-out;
 
       @include mobile {
         height: 2.5rem;
         width: 9.7rem;
 
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      background-color: var(--white-color);
+      transform: translateY(110%);
+      transition: transform .3s ease-out;
+    }
+
+    @include hover {
+      &::after {
+        transform: translateY(0);
+      }
+
+      svg {
+        fill: var(--blue-color);
       }
     }
 
@@ -112,9 +137,16 @@
     padding-left: 3.2rem;
     border-top: .1rem solid rgba(255, 255, 255, 0.24);
     border-left: .1rem solid rgba(255, 255, 255, 0.24);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    position: relative;
+    overflow: hidden;
+
 
     &>span {
       position: relative;
+      z-index: 6;
       display: inline-flex;
       align-items: center;
       gap: 1.2rem;
@@ -125,18 +157,50 @@
       font-style: normal;
       font-weight: 500;
       line-height: normal;
+      transition: color .3s ease-out;
+    }
 
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 3.2rem;
-        height: 3.2rem;
-        background-image: url('./../img/hero/map-icon.svg');
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
+    .map-icon {
+      position: relative;
+      z-index: 6;
+      display: inline-block;
+      width: 3.2rem;
+      height: 3.2rem;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--white-color);
+        transition: fill .3s ease-out;
       }
     }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      background-color: var(--white-color);
+      transform: translateY(110%);
+      transition: transform .3s ease-out;
+    }
+
+    @include hover {
+      &>span {
+        color: var(--blue-color);
+      }
+
+      &::after {
+        transform: translateY(0);
+      }
+
+      .map-icon {
+        svg {
+          fill: var(--blue-color);
+        }
+      }
+    }
+
   }
 
   &__search {
@@ -203,18 +267,17 @@
     border-top: .1rem solid rgba(255, 255, 255, 0.24);
     border-left: .1rem solid rgba(255, 255, 255, 0.24);
     position: relative;
+    overflow: hidden;
 
     &>a {
+      position: relative;
+      z-index: 5;
       color: var(--white-color);
       font-family: 'Plus Jakarta Sans';
       font-size: 1.6rem;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-
-      &:hover {
-        text-decoration: underline;
-      }
 
       &::before {
         content: "";
@@ -223,16 +286,46 @@
       }
     }
 
-    &::before {
-      content: "";
-      display: block;
+    .call-icon {
+      position: relative;
+      z-index: 5;
+      display: inline-block;
       width: 3.2rem;
       height: 3.2rem;
       margin-right: 1.2rem;
-      background-image: url('./../img/phone-icon.svg');
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--white-color);
+        transition: fill .3s ease-out;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      background-color: var(--white-color);
+      transform: translateY(110%);
+      transition: transform .3s ease-out;
+    }
+
+    @include hover {
+      &>a {
+        color: var(--blue-color);
+      }
+
+      &::after {
+        transform: translateY(0);
+      }
+
+      .call-icon {
+        svg {
+          fill: var(--blue-color);
+        }
+      }
     }
   }
 
@@ -251,6 +344,7 @@
   }
 
   &__link {
+
     height: 100%;
     border-left: .1rem solid rgba(255, 255, 255, 0.24);
     border-bottom: .1rem solid rgba(255, 255, 255, 0.24);
@@ -264,13 +358,37 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    overflow: hidden;
+    position: relative;
 
-    &:hover {
-      text-decoration: underline;
+    &>span {
+      position: relative;
+      z-index: 5;
+      transition: color .3s ease-out;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--white-color);
+      transform: translateY(110%);
+
+      transition: transform .3s ease-out;
     }
 
     @include mobile {
       display: none;
+    }
+
+    @include hover {
+      &::after {
+        transform: translateY(0);
+      }
+
+      &>span {
+        color: var(--blue-color);
+      }
     }
   }
 
@@ -294,11 +412,36 @@
   height: 5.2rem;
   border-radius: 100%;
   border: .1rem solid rgba(255, 255, 255, 0.24);
+  position: relative;
+  overflow: hidden;
 
   &>svg {
+    position: relative;
+    z-index: 5;
     fill: #fff;
     width: 46%;
     height: 46%;
+
+    transition: fill .3s ease-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--white-color);
+    transform: translateY(100%);
+    transition: transform .3s ease-out;
+  }
+
+  @include hover {
+    &::after {
+      transform: translateY(0);
+    }
+
+    &>svg {
+      fill: var(--blue-color);
+    }
   }
 }
 
@@ -310,10 +453,19 @@
     svg {
       fill: var(--black-color);
     }
+
+    border-top: .1rem solid #E1E1E1;
+    border-left: .1rem solid #E1E1E1;
   }
 
   .header__place {
     color: var(--black-color);
+    border-top: .1rem solid #E1E1E1;
+    border-left: .1rem solid #E1E1E1;
+
+    svg {
+      fill: var(--black-color);
+    }
 
     &>span {
       color: var(--black-color);
@@ -322,9 +474,22 @@
         background-image: url('./../img/map-icon-black.svg');
       }
     }
+
+    &::after {
+      display: none;
+    }
+
+    @include hover {
+      &>span {
+        color: var(--blue-color);
+      }
+    }
   }
 
   .header__search {
+    border-top: .1rem solid #E1E1E1;
+    border-left: .1rem solid #E1E1E1;
+
     input::placeholder {
       color: #606060;
     }
@@ -337,6 +502,19 @@
   }
 
   .header__call {
+    border-top: .1rem solid #E1E1E1;
+    border-left: .1rem solid #E1E1E1;
+
+    &::after {
+      display: none;
+    }
+
+    .call-icon {
+      svg {
+        fill: var(--black-color);
+      }
+    }
+
     a {
       color: var(--black-color);
     }
@@ -344,21 +522,70 @@
     &::before {
       background-image: url('./../img/phone-icon-black.svg');
     }
+
+    @include hover {
+      &>a {
+        color: var(--blue-color);
+      }
+
+      .call-icon {
+        svg {
+          fill: var(--blue-color)
+        }
+      }
+    }
+  }
+
+  .nav {
+    border-top: .1rem solid #E1E1E1;
+    border-left: .1rem solid #E1E1E1;
+  }
+
+  .header__socials {
+    border-top: .1rem solid #E1E1E1;
+    border-right: .1rem solid #E1E1E1;
+    border-left: .1rem solid #E1E1E1;
   }
 
   .social__link {
+    &::after {
+      display: none;
+    }
+
     svg {
       fill: var(--black-color);
+    }
+
+    @include hover {
+      svg {
+        fill: var(--blue-color);
+      }
     }
   }
 
   .header__link,
   .nav__link,
   .header__contacts {
+    &::after {
+      display: none;
+    }
+
     color: var(--black-color);
 
     a {
       color: inherit;
+    }
+  }
+
+  .header__link {
+    border-top: .1rem solid #E1E1E1;
+    border-right: .1rem solid #E1E1E1;
+    border-left: .1rem solid #E1E1E1;
+
+    @include hover {
+      &>span {
+        color: var(--blue-color);
+      }
     }
   }
 

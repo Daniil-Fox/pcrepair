@@ -46,6 +46,8 @@
     align-items: center;
     gap: 1.6rem;
     padding-top: 1.6rem;
+
+
   }
 
   &__contacts {
@@ -128,21 +130,24 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    transition: color .3s ease-out;
 
     @include mobile {
       font-size: 1.4rem;
-    }
-
-    &:not([href]) {
-      color: var(--black-color);
     }
 
     &:not(:last-child) {
       margin-bottom: 1.6rem;
     }
 
-    &:hover {
-      text-decoration: underline;
+    @include hover {
+      color: var(--black-color);
+
+      .add-icon {
+        svg {
+          fill: var(--black-color);
+        }
+      }
     }
   }
 
@@ -166,35 +171,24 @@
     display: flex;
     align-items: center;
     gap: 1.2rem;
+    transition: color .3s ease-out;
 
-    &::before {
-      content: "";
-      display: block;
+    @include hover {
+      color: var(--black-color) !important;
+    }
+
+    .add-icon {
       flex-shrink: 0;
       width: 2.4rem;
       height: 2.4rem;
 
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-    &--mail {
-      &::before {
-        background-image: url('./../img/mail-icon.svg');
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--white-color);
+        transition: fill .3s ease-out;
       }
     }
 
-    &--tel {
-      &::before {
-        background-image: url('./../img/phone-icon.svg');
-      }
-    }
-
-    &--address {
-      &::before {
-        background-image: url('./../img/hero/map-icon.svg');
-      }
-    }
   }
 }

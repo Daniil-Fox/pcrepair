@@ -7,11 +7,32 @@
   }
 
   &__list {
+    position: relative;
     padding: 2.4rem 3.2rem;
     flex: 1;
     display: flex;
     align-items: center;
     height: 100%;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--white-color);
+      transform: translateY(110%);
+      transition: transform .3s ease-out;
+    }
+
+    @include hover {
+      .nav__link {
+        color: var(--black-color);
+      }
+
+      &::after {
+        transform: translateY(0);
+      }
+    }
 
     @include mobile {
       flex-direction: column;
@@ -21,6 +42,7 @@
   }
 
   &__item {
+
     position: relative;
 
     @include mobile {
@@ -35,9 +57,18 @@
         margin-right: 0;
       }
     }
+
+    @include hover {
+      .nav__link {
+        color: var(--blue-color);
+      }
+    }
+
   }
 
   &__link {
+    position: relative;
+    z-index: 5;
     color: var(--white-color);
     text-align: center;
     font-family: 'Noto Sans JP';
@@ -45,15 +76,12 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    transition: color .3s ease-out;
 
     &::after {
       content: "";
       position: absolute;
       inset: 0;
-    }
-
-    @include hover {
-      text-decoration: underline;
     }
   }
 }
