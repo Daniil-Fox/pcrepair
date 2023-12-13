@@ -2823,17 +2823,17 @@ a {
 .price-list tr:not(:first-child) {
   border-bottom: 1px dashed var(--blue-color);
 }
+@media (any-hover: hover) {
+  .price-list tr:not(:first-child):hover {
+    background-color: #CCE5F2;
+  }
+}
 .price-list tr:first-child {
   background-color: var(--blue-color);
 }
 @media (max-width: 576px) {
   .price-list tr {
     padding: 1.6rem 2rem;
-  }
-}
-@media (any-hover: hover) {
-  .price-list tr:hover {
-    background-color: #CCE5F2;
   }
 }
 .price-list__name {

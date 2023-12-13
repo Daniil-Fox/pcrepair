@@ -79,10 +79,15 @@
     align-items: center;
 
     background-color: #FFF;
+
     transition: background-color .3s ease-out;
 
     &:not(:first-child) {
       border-bottom: 1px dashed var(--blue-color);
+
+      @include hover {
+        background-color: #CCE5F2;
+      }
     }
 
     &:first-child {
@@ -93,9 +98,7 @@
       padding: 1.6rem 2rem;
     }
 
-    @include hover {
-      background-color: #CCE5F2;
-    }
+
   }
 
   &__name {
