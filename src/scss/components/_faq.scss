@@ -1,0 +1,147 @@
+.faq {
+  padding-bottom: 8rem;
+
+  @include mobile {
+    padding-bottom: 3.2rem;
+  }
+
+  .line {
+    margin-bottom: 8rem;
+
+    @include mobile {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    counter-reset: items;
+  }
+
+  &__item {
+    // flex-grow: 1;
+  }
+}
+
+.faq-item {
+  counter-increment: items;
+  cursor: pointer;
+  border-bottom: .1rem solid var(--blue-color);
+
+  &>button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1.6rem 0;
+    pointer-events: none;
+    color: #000;
+    transition: color .3s ease-out, margin-bottom .3s ease-out;
+
+    &>span {
+      font-family: 'Noto Sans JP';
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+
+      @include mobile {
+        font-size: 1.4rem;
+        max-width: 28rem;
+      }
+    }
+
+    @include mobile {
+      padding: 0.8rem 0;
+      text-align: left;
+    }
+
+    &::before {
+      content: counter(items);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 6rem;
+      height: 5.4rem;
+      margin-right: 1.6rem;
+      color: var(--white-color);
+      font-family: 'Russo One';
+      font-size: 2.8rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 108%;
+
+      background-color: var(--blue-color);
+
+      @include mobile {
+        width: 3.6rem;
+        height: 3.8rem;
+        margin-right: 1.2rem;
+        font-size: 2rem;
+      }
+    }
+
+    &::after {
+      content: "+";
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      width: 4.4rem;
+      height: 4.4rem;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--blue-color);
+    }
+
+
+  }
+
+  &__content {
+    padding: 0 7.6rem;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    color: #000;
+    font-family: 'Noto Sans JP';
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+
+    transition: max-height .3s ease-out, padding-bottom .3s ease-out, padding-top .3s ease-out;
+    will-change: max-height;
+
+    @include mobile {
+      font-size: 1.4rem;
+      padding: 0 4.8rem;
+    }
+  }
+
+  &.active {
+    &>button {
+      color: var(--blue-color);
+      text-transform: uppercase;
+      margin-bottom: 2.4rem;
+
+      @include mobile {
+        margin-bottom: 2rem;
+      }
+
+      &::after {
+        content: "—";
+      }
+    }
+
+    .faq-item__content {
+      margin-bottom: 2.4rem;
+
+      @include mobile {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

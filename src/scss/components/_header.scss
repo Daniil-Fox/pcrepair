@@ -2,6 +2,8 @@
   display: flex;
   width: 100%;
 
+
+
   &__col {
     display: flex;
     flex-direction: column;
@@ -75,6 +77,8 @@
   }
 
   &__burger {
+    position: relative;
+    z-index: 100;
     flex: 1;
     display: none;
     border-bottom: .1rem solid rgba(255, 255, 255, 0.24);
@@ -84,6 +88,21 @@
 
     @include mobile {
       display: block;
+    }
+
+    svg {
+      fill: var(--white-color);
+      width: 3.2rem;
+      height: 3.2rem;
+
+      transition: fill .3s ease-out;
+    }
+
+    &.active {
+
+      svg {
+        fill: var(--white-color) !important;
+      }
     }
   }
 
@@ -280,5 +299,74 @@
     fill: #fff;
     width: 46%;
     height: 46%;
+  }
+}
+
+
+.header--sec {
+  background-color: var(--white-color);
+
+  .header__logo {
+    svg {
+      fill: var(--black-color);
+    }
+  }
+
+  .header__place {
+    color: var(--black-color);
+
+    &>span {
+      color: var(--black-color);
+
+      &::before {
+        background-image: url('./../img/map-icon-black.svg');
+      }
+    }
+  }
+
+  .header__search {
+    input::placeholder {
+      color: #606060;
+    }
+
+    &-label {
+      &::before {
+        background-image: url('./../img/search-icon-black.svg');
+      }
+    }
+  }
+
+  .header__call {
+    a {
+      color: var(--black-color);
+    }
+
+    &::before {
+      background-image: url('./../img/phone-icon-black.svg');
+    }
+  }
+
+  .social__link {
+    svg {
+      fill: var(--black-color);
+    }
+  }
+
+  .header__link,
+  .nav__link,
+  .header__contacts {
+    color: var(--black-color);
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .header__burger {
+    svg {
+      fill: var(--black-color);
+      width: 3.2rem;
+      height: 3.2rem;
+    }
   }
 }

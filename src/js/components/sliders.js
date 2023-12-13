@@ -56,6 +56,36 @@ const casesSlider = new Swiper('.cases__slider', {
   },
 });
 
+const aboutBenSlider = new Swiper('.about-benefits__slider', {
+  slidesPerView: "auto",
+  pagination: {
+    el: '.about-benefits-pagination',
+    clickable: true
+  },
+});
+
+const aboutGalSlider = new Swiper('.about-gallery__slider', {
+  slidesPerView: 3,
+  spaceBetween: 24,
+  slidesPerGroup: 3,
+  pagination: {
+    el: '.about-g-pagination',
+    clickable: true
+  },
+  breakpoints : {
+    320 : {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      slidesPerGroup: 1
+    },
+    769 : {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      slidesPerGroup: 3,
+    }
+  }
+});
+
 const ctaMain = document.querySelector('.cta__slider--main')
 const nextCta = document.querySelector('.cta-form-next')
 const ctaMainSlider = new Swiper(ctaMain, {
@@ -102,13 +132,14 @@ function disBtn(slider){
     }
   })
 }
+if(ctaMain){
+  const inputs = ctaMain.querySelectorAll('input')
+  inputs.forEach(el => {
+    el.addEventListener('change', () =>  disBtn(ctaMain))
+  })
 
-const inputs = ctaMain.querySelectorAll('input')
-inputs.forEach(el => {
-  el.addEventListener('change', () =>  disBtn(ctaMain))
-})
-
-disBtn(ctaMain)
+  disBtn(ctaMain)
+}
 
 
 
@@ -144,13 +175,14 @@ const ctaSecSlider = new Swiper(ctaSec, {
     }
   }
 });
+if(ctaSec){
+  const inputsSec = ctaSec.querySelectorAll('input')
+  inputsSec.forEach(el => {
+    el.addEventListener('change', () =>  disBtn(ctaSec))
+  })
 
-const inputsSec = ctaSec.querySelectorAll('input')
-inputsSec.forEach(el => {
-  el.addEventListener('change', () =>  disBtn(ctaSec))
-})
-
-disBtn(ctaSec)
+  disBtn(ctaSec)
+}
 
 
 
@@ -191,6 +223,18 @@ window.addEventListener('DOMContentLoaded', () => {
       slidesPerView: "auto",
       pagination: {
         el: '.service-pagination'
+      }
+    },
+
+  );
+
+  resizableSwiper(
+    '(max-width: 768px)',
+    '.steps__slider',
+    {
+      slidesPerView: "auto",
+      pagination: {
+        el: '.steps-pagination'
       }
     },
 

@@ -1,0 +1,10 @@
+.map {
+  &__map {
+    height: 52.8rem;
+    background-color: #ccc;
+
+    @include mobile {
+      height: 24rem;
+    }
+  }
+}

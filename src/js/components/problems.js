@@ -4,24 +4,25 @@ const problemsItems = document.querySelector('.problems__items')
 const problemsSection = document.querySelector('.problems')
 
 
-problemsSection.addEventListener('click', e => {
+problemsSection?.addEventListener('click', e => {
   e.stopPropagation()
   clearAll()
 })
+if(problems && problems.length > 0){
+  problems.forEach(prob => {
+    prob.addEventListener('click', e => {
+      e.stopPropagation()
+      const currentSol = document.querySelector(`.problems-content[data-prob="${prob.dataset.prob}"]`)
+      const currentCol = currentSol.closest('.problems__sol')
+      clearAll()
 
-problems.forEach(prob => {
-  prob.addEventListener('click', e => {
-    e.stopPropagation()
-    const currentSol = document.querySelector(`.problems-content[data-prob="${prob.dataset.prob}"]`)
-    const currentCol = currentSol.closest('.problems__sol')
-    clearAll()
-
-    prob.classList.add('active')
-    problemsItems.classList.add('active')
-    currentCol.classList.add('active')
-    currentSol.classList.add('active')
+      prob.classList.add('active')
+      problemsItems.classList.add('active')
+      currentCol.classList.add('active')
+      currentSol.classList.add('active')
+    })
   })
-})
+}
 
 function clearAll(){
   const problemsContent = document.querySelectorAll('.problems-content')

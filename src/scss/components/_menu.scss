@@ -1,0 +1,31 @@
+.menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background-color: #ccc;
+
+  transform: translateX(100%);
+
+  transition: transform .3s ease-out;
+
+  @include mobile {
+    display: block;
+  }
+
+  &__window {
+    position: absolute;
+    inset: 0;
+    background-color: var(--blue-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+}

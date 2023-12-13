@@ -228,3 +228,25 @@ a {
 .swiper-pagination-progressbar-fill {
   background: var(--blue-color) !important;
 }
+
+.title {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  padding: 6rem 0;
+  color: var(--white-color);
+  font-family: 'Russo One';
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0.24rem;
+  text-transform: uppercase;
+  background-color: var(--accent-color);
+
+  @include mobile {
+    margin-bottom: 1.6rem;
+    padding: 2rem 0;
+    font-size: 2.8rem;
+    letter-spacing: 0.112rem;
+  }
+}

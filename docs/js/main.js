@@ -25,6 +25,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_problems__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/problems */ "./src/js/components/problems.js");
 /* harmony import */ var _components_problems__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_problems__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/sliders */ "./src/js/components/sliders.js");
+/* harmony import */ var _components_faq__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/faq */ "./src/js/components/faq.js");
+/* harmony import */ var _components_faq__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_faq__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -164,6 +167,27 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/components/faq.js":
+/*!**********************************!*\
+  !*** ./src/js/components/faq.js ***!
+  \**********************************/
+/***/ (() => {
+
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(el => {
+  el.addEventListener('click', e => {
+    const content = e.currentTarget.querySelector('.faq-item__content');
+    let isActive = e.currentTarget.classList.toggle('active');
+    if (isActive) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+    } else {
+      content.style.maxHeight = null;
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/components/modal.js":
 /*!************************************!*\
   !*** ./src/js/components/modal.js ***!
@@ -205,22 +229,24 @@ modalWindow.addEventListener('click', e => {
 const problems = document.querySelectorAll('.problems-item');
 const problemsItems = document.querySelector('.problems__items');
 const problemsSection = document.querySelector('.problems');
-problemsSection.addEventListener('click', e => {
+problemsSection?.addEventListener('click', e => {
   e.stopPropagation();
   clearAll();
 });
-problems.forEach(prob => {
-  prob.addEventListener('click', e => {
-    e.stopPropagation();
-    const currentSol = document.querySelector(`.problems-content[data-prob="${prob.dataset.prob}"]`);
-    const currentCol = currentSol.closest('.problems__sol');
-    clearAll();
-    prob.classList.add('active');
-    problemsItems.classList.add('active');
-    currentCol.classList.add('active');
-    currentSol.classList.add('active');
+if (problems && problems.length > 0) {
+  problems.forEach(prob => {
+    prob.addEventListener('click', e => {
+      e.stopPropagation();
+      const currentSol = document.querySelector(`.problems-content[data-prob="${prob.dataset.prob}"]`);
+      const currentCol = currentSol.closest('.problems__sol');
+      clearAll();
+      prob.classList.add('active');
+      problemsItems.classList.add('active');
+      currentCol.classList.add('active');
+      currentSol.classList.add('active');
+    });
   });
-});
+}
 function clearAll() {
   const problemsContent = document.querySelectorAll('.problems-content');
   const problemsColumns = document.querySelectorAll('.problems__sol');
@@ -335,6 +361,34 @@ const casesSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.cases__
     clickable: true
   }
 });
+const aboutBenSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.about-benefits__slider', {
+  slidesPerView: "auto",
+  pagination: {
+    el: '.about-benefits-pagination',
+    clickable: true
+  }
+});
+const aboutGalSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.about-gallery__slider', {
+  slidesPerView: 3,
+  spaceBetween: 24,
+  slidesPerGroup: 3,
+  pagination: {
+    el: '.about-g-pagination',
+    clickable: true
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      slidesPerGroup: 1
+    },
+    769: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      slidesPerGroup: 3
+    }
+  }
+});
 const ctaMain = document.querySelector('.cta__slider--main');
 const nextCta = document.querySelector('.cta-form-next');
 const ctaMainSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](ctaMain, {
@@ -374,11 +428,13 @@ function disBtn(slider) {
     }
   });
 }
-const inputs = ctaMain.querySelectorAll('input');
-inputs.forEach(el => {
-  el.addEventListener('change', () => disBtn(ctaMain));
-});
-disBtn(ctaMain);
+if (ctaMain) {
+  const inputs = ctaMain.querySelectorAll('input');
+  inputs.forEach(el => {
+    el.addEventListener('change', () => disBtn(ctaMain));
+  });
+  disBtn(ctaMain);
+}
 const ctaSec = document.querySelector('.cta__slider--sec');
 const nextCtaSec = document.querySelector('.cta-form-sec-next');
 const ctaSecSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](ctaSec, {
@@ -405,11 +461,13 @@ const ctaSecSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](ctaSec, 
     }
   }
 });
-const inputsSec = ctaSec.querySelectorAll('input');
-inputsSec.forEach(el => {
-  el.addEventListener('change', () => disBtn(ctaSec));
-});
-disBtn(ctaSec);
+if (ctaSec) {
+  const inputsSec = ctaSec.querySelectorAll('input');
+  inputsSec.forEach(el => {
+    el.addEventListener('change', () => disBtn(ctaSec));
+  });
+  disBtn(ctaSec);
+}
 window.addEventListener('DOMContentLoaded', () => {
   const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
     let swiper;
@@ -435,6 +493,12 @@ window.addEventListener('DOMContentLoaded', () => {
     slidesPerView: "auto",
     pagination: {
       el: '.service-pagination'
+    }
+  });
+  resizableSwiper('(max-width: 768px)', '.steps__slider', {
+    slidesPerView: "auto",
+    pagination: {
+      el: '.steps-pagination'
     }
   });
 });
@@ -23030,9 +23094,9 @@ window.addEventListener('DOMContentLoaded', () => {
     // the delay on throttle used while scrolling the page (advanced)
 
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-    offset: 150,
+    offset: 100,
     // offset (in px) from the original trigger point
-    delay: 0,
+    delay: 100,
     // values from 0 to 3000, with step 50ms
     duration: 400,
     // values from 0 to 3000, with step 50ms
@@ -23059,6 +23123,20 @@ priceMoreBtn.forEach(el => {
       priceList.style.maxHeight = null;
     }
   });
+});
+const burgerBtn = document.querySelector('.header__burger');
+burgerBtn.addEventListener('click', e => {
+  e.preventDefault();
+  const menu = document.querySelector('.menu');
+  let isActive = menu.classList.toggle('active');
+  burgerBtn.classList.toggle('active');
+  if (isActive) {
+    burgerBtn.style.border = 'none';
+    document.body.style.overflow = 'hidden';
+  } else {
+    burgerBtn.style.border = null;
+    document.body.style.overflow = null;
+  }
 });
 })();
 

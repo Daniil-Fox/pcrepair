@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-    offset: 150, // offset (in px) from the original trigger point
-    delay: 0, // values from 0 to 3000, with step 50ms
+    offset: 100, // offset (in px) from the original trigger point
+    delay: 100, // values from 0 to 3000, with step 50ms
     duration: 400, // values from 0 to 3000, with step 50ms
     easing: 'ease', // default easing for AOS animations
     once: true, // whether animation should happen only once - while scrolling down
@@ -46,4 +46,26 @@ priceMoreBtn.forEach(el => {
       priceList.style.maxHeight = null
     }
   })
+})
+
+
+
+const burgerBtn = document.querySelector('.header__burger')
+
+burgerBtn.addEventListener('click', e => {
+  e.preventDefault()
+
+  const menu = document.querySelector('.menu')
+
+  let isActive = menu.classList.toggle('active')
+  burgerBtn.classList.toggle('active')
+  if(isActive){
+    burgerBtn.style.border = 'none'
+    document.body.style.overflow = 'hidden'
+  } else {
+    burgerBtn.style.border = null
+    document.body.style.overflow = null
+  }
+
+
 })

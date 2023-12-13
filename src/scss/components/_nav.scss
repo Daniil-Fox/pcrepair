@@ -1,17 +1,39 @@
 .nav {
   border-left: .1rem solid rgba(255, 255, 255, 0.24);
 
+  @include mobile {
+    border-left: none;
+    width: 100%;
+  }
+
   &__list {
     padding: 2.4rem 3.2rem;
     flex: 1;
     display: flex;
     align-items: center;
     height: 100%;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+
+    }
   }
 
   &__item {
+    position: relative;
+
+    @include mobile {
+      padding: 2rem 0;
+      border-bottom: .1rem solid #fff;
+    }
+
     &:not(:last-child) {
       margin-right: 7rem;
+
+      @include mobile {
+        margin-right: 0;
+      }
     }
   }
 
@@ -23,6 +45,12 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
 
     @include hover {
       text-decoration: underline;

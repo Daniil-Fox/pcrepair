@@ -1,0 +1,51 @@
+.breadcrumbs {
+  &>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    &>li {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:not(:last-child) {
+
+        &::after {
+          content: "";
+          display: block;
+          width: 2.4rem;
+          height: 2.4rem;
+          background-image: url('./../img/arrow-right-br.svg');
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+
+          @include mobile {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+
+      &>a {
+        color: var(--black-color);
+        font-family: 'Noto Sans JP';
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1;
+
+        &:not([href]) {
+          color: var(--blue-color);
+        }
+
+        @include mobile {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}

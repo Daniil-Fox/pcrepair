@@ -23,6 +23,30 @@
   <div class="site-container">
 
     <main class="main">
+
+      <div class="menu">
+  <div class="menu__window">
+    <nav class="nav">
+      <ul class="nav__list list-reset">
+        <li class="nav__item">
+          <a class="nav__link" href="./">Главная</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="./about.html">О нас</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="./contacts.html">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+    <address class="footer__col">
+      <a href="tel:9778705596" class="footer__add footer__add--tel footer__link">977-870-55-96</a>
+      <a href="mailto:workshop.lenina6@gmail.com"
+        class="footer__add footer__add--mail footer__link">workshop.lenina6@gmail.com</a>
+      <p class="footer__add footer__link footer__add--address">г.Истра, улица Ленина, дом 6, магазин Матрикс</p>
+    </address>
+  </div>
+</div>
       <div class="modal">
   <div class="modal__window">
     <form class="modal__form form">
@@ -82,13 +106,13 @@
     <nav class="header__nav header__row nav">
       <ul class="nav__list list-reset">
         <li class="nav__item">
-          <a href="#" class="nav__link">Главная</a>
+          <a class="nav__link">Главная</a>
         </li>
         <li class="nav__item">
-          <a href="#" class="nav__link">О Нас</a>
+          <a href="./about.html" class="nav__link">О Нас</a>
         </li>
         <li class="nav__item">
-          <a href="#" class="nav__link">Контакты</a>
+          <a href="./contacts.html" class="nav__link">Контакты</a>
         </li>
       </ul>
     </nav>
@@ -106,13 +130,20 @@
         </svg>
       </a>
     </div>
-    <a href="#" class="header__link">Починить Технику</a>
+    <button class="header__link btn-reset" data-modal-btn>Починить Технику</button>
   </div>
   <div class="header__contacts">
-    <a href="#">Контакты</a>
+    <a href="./contacts.html">Контакты</a>
   </div>
   <button class="btn-reset header__burger">
-    <img src="./img/burger-icon.svg" alt="">
+    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="Frame 480959011">
+        <path id="Vector"
+          d="M5.09375 3.78125H9.03125V7.71875H5.09375V3.78125ZM14.9375 3.78125H18.875V7.71875H14.9375V3.78125ZM24.7812 3.78125H28.7188V7.71875H24.7812V3.78125ZM5.09375 13.625H9.03125V17.5625H5.09375V13.625ZM14.9375 13.625H18.875V17.5625H14.9375V13.625ZM24.7812 13.625H28.7188V17.5625H24.7812V13.625ZM5.09375 23.4688H9.03125V27.4062H5.09375V23.4688ZM14.9375 23.4688H18.875V27.4062H14.9375V23.4688ZM24.7812 23.4688H28.7188V27.4062H24.7812V23.4688Z"
+          fill="white" />
+      </g>
+    </svg>
+
   </button>
 </header>
   <div class="hero__header">
@@ -1497,9 +1528,9 @@
       </div>
       <div class="footer__contacts">
         <nav class="footer__col">
-          <a class="footer__link">Главная</a>
-          <a href="#" class="footer__link">О нас</a>
-          <a href="#" class="footer__link">Контакты</a>
+          <a href="./" class="footer__link">Главная</a>
+          <a href="./about.html" class="footer__link">О нас</a>
+          <a href="./contacts.html" class="footer__link">Контакты</a>
         </nav>
         <address class="footer__col">
           <a href="tel:9778705596" class="footer__add footer__add--tel footer__link">977-870-55-96</a>
