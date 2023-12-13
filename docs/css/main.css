@@ -3725,6 +3725,9 @@ a {
 
 .about-g__item {
   padding: 2.4rem;
+  background: var(--white-color);
+  -webkit-box-shadow: 0rem 0rem 1.8rem 0px rgba(4, 0, 48, 0.18);
+  box-shadow: 0rem 0rem 1.8rem 0px rgba(4, 0, 48, 0.18);
 }
 @media (max-width: 576px) {
   .about-g__item {
@@ -3780,6 +3783,9 @@ a {
   align-items: center;
   padding: 6rem;
   gap: 23rem;
+  background: #FFF;
+  -webkit-box-shadow: 0rem 0.6rem 2rem 0rem rgba(4, 0, 48, 0.16);
+  box-shadow: 0rem 0.6rem 2rem 0rem rgba(4, 0, 48, 0.16);
 }
 @media (max-width: 576px) {
   .contacts {

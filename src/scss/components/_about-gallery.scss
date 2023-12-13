@@ -17,6 +17,8 @@
 .about-g {
   &__item {
     padding: 2.4rem;
+    background: var(--white-color);
+    box-shadow: 0rem 0rem 1.8rem 0px rgba(4, 0, 48, 0.18);
 
     @include mobile {
       padding: 2rem;

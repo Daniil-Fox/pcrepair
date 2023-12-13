@@ -19,6 +19,8 @@
   align-items: center;
   padding: 6rem;
   gap: 23rem;
+  background: #FFF;
+  box-shadow: 0rem .6rem 2rem 0rem rgba(4, 0, 48, 0.16);
 
   @include mobile {
     gap: 4rem;
