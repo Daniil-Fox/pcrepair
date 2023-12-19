@@ -1,9 +1,11 @@
 .about-steps {
-  padding-bottom: 8rem;
+
 
   .line {
-    margin-bottom: 8rem;
+    // margin-bottom: 8rem;
   }
+
+
 
   &__container {
     display: flex;
@@ -11,6 +13,7 @@
 
     .swiper-slide {
       flex-shrink: 1;
+      height: auto;
     }
 
     @include mobile {
@@ -24,6 +27,7 @@
     padding: 2.4rem 3.3rem;
     background: #FFF;
     box-shadow: .1rem .4rem 2.5rem 0rem rgba(0, 0, 0, 0.10);
+    height: 100%;
 
     @include mobile {
       padding: 2.4rem 2rem 2.8rem;
@@ -56,7 +60,7 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      height: 0.1rem;
+      height: 0.4rem;
       background: radial-gradient(50% 50% at 50% 50%, #007BBD 0%, rgba(0, 123, 189, 0.00) 100%);
     }
   }
@@ -107,7 +111,15 @@
 }
 
 .steps__slider {
+  padding: 0 13.4rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+
   @include mobile {
+    padding: 0;
+    padding-top: 3.2rem;
+    padding-left: 1.6rem;
     padding-right: 3.6rem;
+    margin-bottom: 3.2rem;
   }
 }

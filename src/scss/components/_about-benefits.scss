@@ -16,6 +16,10 @@
       width: auto;
       height: auto;
 
+      &:not(:last-child) {
+        margin-right: 2.4rem;
+      }
+
       &:first-child {}
     }
   }
@@ -24,12 +28,16 @@
 
 
 .about-ben {
-  padding: 4.4rem;
+  padding: 3.4rem 4.4rem;
   position: relative;
   width: 53.3rem;
   height: 100%;
   background: #FFF;
   box-shadow: -.8rem .8rem 1.8rem 0rem rgba(4, 0, 48, 0.16);
+
+  &--exp {
+    padding: 4.4rem 6rem;
+  }
 
   @include mobile {
     padding: 3.2rem 0.6rem;

@@ -1,14 +1,16 @@
 <div class="modal">
   <div class="modal__window">
-    <form class="modal__form form">
+    <form class="modal__form form" action="#" method="POST" enctype="multipart/form-data">
       <h3 class="form__title">Оставьте ваши контактные данные</h3>
-      <p class="form__desc">и наш спецалист свяжется с вами в течении 30 минут</p>
+      <p class="form__desc">и наш специалист свяжется с вами в течение 30 минут</p>
       <div class="form__inputs">
         <label class="form__label">
-          <input type="text" class="form__input" placeholder="Имя">
+          <input type="text" class="form__input" data-validate-field="name" name="Client Name" id="modal-name"
+            placeholder="Имя">
         </label>
         <label class="form__label">
-          <input type="tel" data-type="tel" class="form__input form__input--tel" placeholder="Номер телефона">
+          <input type="tel" data-type="tel" class="form__input form__input--tel" name="Number" id="modal-tel"
+            placeholder="Номер телефона" data-validate-field="tel">
         </label>
       </div>
       <button type="submit" class="form__btn btn btn-reset"><span>Отправить</span></button>
@@ -16,8 +18,8 @@
     </form>
     <div class="modal__image">
       <picture>
-        <source srcset="./img/modal-pic-2x.webp" media="(min-width: 1920px)">
-        <source srcset="./img/modal-pic.webp">
+        <source type="image/webp" srcset="./img/modal-pic-2x.webp" media="(min-width: 1920px)">
+        <source type="image/webp" srcset="./img/modal-pic.webp">
         <img src="./img/modal-pic.jpg" srcset="./img/modal-pic-2x.jpg" alt="Laptop">
       </picture>
     </div>

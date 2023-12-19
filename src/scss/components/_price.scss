@@ -71,6 +71,28 @@
     }
   }
 
+  caption {
+    background-color: var(--blue-color);
+    padding: 2.4rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: var(--white-color);
+    font-family: 'Russo One';
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.032rem;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 1.8rem;
+      letter-spacing: normal;
+    }
+  }
+
   tr {
     padding: 2.4rem;
     width: 100%;
@@ -82,16 +104,10 @@
 
     transition: background-color .3s ease-out;
 
-    &:not(:first-child) {
-      border-bottom: 1px dashed var(--blue-color);
+    border-bottom: 1px dashed var(--blue-color);
 
-      @include hover {
-        background-color: #CCE5F2;
-      }
-    }
-
-    &:first-child {
-      background-color: var(--blue-color);
+    @include hover {
+      background-color: #CCE5F2;
     }
 
     @include mobile {

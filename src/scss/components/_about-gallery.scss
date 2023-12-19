@@ -5,17 +5,30 @@
     padding-bottom: 3.2rem;
   }
 
-  .line {
-    margin-bottom: 8rem;
+  .line {}
+
+  &__slider {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    padding-top: 8rem;
+    overflow: hidden;
 
     @include mobile {
-      margin-bottom: 3.2rem;
+      margin-left: -1.6rem;
+      margin-right: -1.6rem;
+      padding-top: 3.2rem;
     }
+  }
+
+  .swiper-slide {
+    height: auto;
   }
 }
 
 .about-g {
+
   &__item {
+    height: 100%;
     padding: 2.4rem;
     background: var(--white-color);
     box-shadow: 0rem 0rem 1.8rem 0px rgba(4, 0, 48, 0.18);
@@ -47,5 +60,9 @@
     font-weight: 400;
     line-height: 120%;
     letter-spacing: 0.016rem;
+
+    span {
+      font-weight: 700;
+    }
   }
 }

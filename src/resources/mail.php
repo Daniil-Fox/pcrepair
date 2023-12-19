@@ -1,69 +1,69 @@
 <?php
-// Файлы phpmailer
-require 'phpmailer/PHPMailer.php';
-require 'phpmailer/SMTP.php';
-require 'phpmailer/Exception.php';
+// Multiple recipients
+$to = 'foxones80@gmail.com'; // note the comma
 
-$title = "Тема письма";
-$file = $_FILES['file'];
+$typeDevice = $_POST['radio-type'];
+$problem = $_POST['radio-prob'];
+$brand = $_POST['input-brand-pc'];
+$time = $_POST['input-time-pc'];
+$contact = $_POST['radio-contact'];
+$tel = $_POST['input-contact-tel'];
 
-$c = true;
-// Формирование самого письма
-$title = "Заголовок письма";
-foreach ( $_POST as $key => $value ) {
-  if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
-    $body .= "
-    " . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
-      <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
-      <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
-    </tr>
-    ";
-  }
-}
+// Subject
+$subject = 'Заявка для звонка';
+// Message
+$message = '
+<html>
+<head>
+  <title>Заявка</title>
+</head>
+<body>
+  <h2>Данные от клиента</h2>
+  <p>Тип устройства: <b>' . $typeDevice . '</b> </p>
+  <p>Проблема: <b>' . $problem . '</b> </p>
+  <p>Бренд: <b>' . $brand . '</b> </p>
+  <p>Срок эксплуатации: <b>' . $time . '</b> </p>
+  <p>Способ связи: <b>' . $contact . '</b> </p>
+  <p>Номер телефона: <b>' . $tel . '</b> </p>
+</body>
+</html>
+';
 
-$body = "<table style='width: 100%;'>$body</table>";
+// To send HTML mail, the Content-type header must be set
+$headers[] = 'MIME-Version: 1.0';
+$headers[] = 'Content-type: text/html; charset=utf-8';
 
-// Настройки PHPMailer
-$mail = new PHPMailer\PHPMailer\PHPMailer();
+// Additional headers
+$headers[] = 'To: vertuvirzi@gufum.com';
+$headers[] = 'From: ';
 
-try {
-  $mail->isSMTP();
-  $mail->CharSet = "UTF-8";
-  $mail->SMTPAuth   = true;
+// Mail it
+mail($to, $subject, $message, implode("\r\n", $headers));
 
-  // Настройки вашей почты
-  $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-  $mail->Username   = ''; // Логин на почте
-  $mail->Password   = ''; // Пароль на почте
-  $mail->SMTPSecure = 'ssl';
-  $mail->Port       = 465;
 
-  $mail->setFrom('', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
 
-  // Получатель письма
-  $mail->addAddress('');
 
-  // Прикрипление файлов к письму
-  if (!empty($file['name'][0])) {
-    for ($ct = 0; $ct < count($file['tmp_name']); $ct++) {
-      $uploadfile = tempnam(sys_get_temp_dir(), sha1($file['name'][$ct]));
-      $filename = $file['name'][$ct];
-      if (move_uploaded_file($file['tmp_name'][$ct], $uploadfile)) {
-          $mail->addAttachment($uploadfile, $filename);
-          $rfile[] = "Файл $filename прикреплён";
-      } else {
-          $rfile[] = "Не удалось прикрепить файл $filename";
-      }
-    }
-  }
+/* https://api.telegram.org/bot6805662095:AAHMAInEy9lVRTo6gOf6bBT60lN1lRYDZho/getUpdates,
+где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
 
-  // Отправка сообщения
-  $mail->isHTML(true);
-  $mail->Subject = $title;
-  $mail->Body = $body;
 
-  $mail->send();
+// $token = "";
+// $chat_id = "";
+// $arr = array(
+//   'Имя пользователя: ' => $name,
+//   'Телефон: ' => $phone,
+//   'Email' => $email
+// );
 
-} catch (Exception $e) {
-  $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
-}
+// foreach($arr as $key => $value) {
+//   $txt .= "<b>".$key."</b> ".$value."%0A";
+// };
+
+// $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
+
+// if ($sendToTelegram) {
+//   header('Location: thank-you.html');
+// } else {
+//   echo "Error";
+// }
+?>

@@ -69,3 +69,24 @@ burgerBtn.addEventListener('click', e => {
 
 
 })
+
+
+
+
+const tabsPC = document.querySelectorAll('.popular__btn')
+
+tabsPC.forEach(el => {
+  el.addEventListener('click', e => {
+    e.preventDefault()
+
+    const container = e.currentTarget.closest('.popular')
+    const dataType = e.currentTarget.dataset.type
+    container.querySelectorAll('.popular__btn').forEach(btn => {
+      btn.classList.remove('active')
+    })
+    e.currentTarget.classList.add('active')
+    container.querySelector('.popular__slider.active').classList.remove('active')
+    container.querySelector(`.popular__slider[data-type="${dataType}"]`).classList.add('active')
+
+  })
+})

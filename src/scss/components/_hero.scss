@@ -1,6 +1,6 @@
 .hero {
   min-height: 100vh;
-  background-image: url('./../img/hero/hero-bg.webp');
+  background-image: url('./../img/hero/hero-bg-2x.webp');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,10 +16,6 @@
     z-index: -1;
     inset: 0;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(60, 60, 60, 0.00) 67.64%);
-  }
-
-  @media (min-width: 2560px) {
-    background-image: url('./../img/hero/hero-bg-2x.webp');
   }
 
   &__header {
@@ -65,14 +61,27 @@
     letter-spacing: -0.064rem;
 
     &>span {
+      position: relative;
       display: inline-block;
       padding: 0 1.6rem;
       color: var(--blue-color);
       font-size: 3.6rem;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 120%;
       letter-spacing: -0.072rem;
-      background: rgba(255, 255, 255, 0.68);
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        width: 100%;
+        height: 120%;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.68);
+      }
 
       @include mobile {
         font-size: 2.6rem;
@@ -89,7 +98,8 @@
 
   &__btn {
     position: relative;
-    padding: 2.4rem 7.2rem;
+    padding: 2.4rem 1rem;
+    width: 29.6rem;
     border: .1rem solid var(--white-color);
     display: inline-block;
     color: var(--white-color);
@@ -135,6 +145,8 @@
 
   &__item {
     &--prior {
+
+
       &::before {
         background-image: url('./../img/hero/list/01.svg');
         background-size: 8rem;
@@ -142,6 +154,8 @@
     }
 
     &--an {
+
+
       &::before {
         background-image: url('./../img/hero/list/02.svg');
         background-size: 5rem;
@@ -149,6 +163,8 @@
     }
 
     &--rep {
+
+
       &::before {
         background-image: url('./../img/hero/list/03.svg');
         background-size: 5.6rem 4.6rem;
@@ -156,6 +172,8 @@
     }
 
     &--report {
+
+
       &::before {
         background-image: url('./../img/hero/list/04.svg');
         background-size: 8rem;
@@ -163,6 +181,9 @@
     }
 
     &--det {
+
+
+
       &::before {
         background-image: url('./../img/hero/list/05.svg');
         background-size: 8rem;
@@ -177,6 +198,13 @@
   padding: 0 2.5rem;
   padding-top: 11.2rem;
   text-align: center;
+
+  @include hover {}
+
+  &:nth-child(2) {
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
 
   @include mobile {
     max-width: 13.1rem;
@@ -225,11 +253,22 @@
     border: .1rem solid var(--white-color);
     background-position: center center;
     background-repeat: no-repeat;
+    animation: shadow 1.5s ease-out infinite;
 
     @include mobile {
       width: 6rem;
       height: 6rem;
       background-size: 4rem;
     }
+  }
+}
+
+@keyframes shadow {
+  from {
+    box-shadow: 0 0 2rem transparent;
+  }
+
+  to {
+    box-shadow: 0 0 2rem var(--white-color);
   }
 }

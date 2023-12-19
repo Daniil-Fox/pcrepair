@@ -309,3 +309,11 @@ a {
     }
   }
 }
+
+.just-validate-error-label {
+  display: none !important;
+}
+
+.just-validate-error-field {
+  box-shadow: 0 0 .5rem red;
+}

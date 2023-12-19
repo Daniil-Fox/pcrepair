@@ -23,6 +23,27 @@ const popularSlider = new Swiper('.popular__slider--pc', {
     }
   }
 });
+const popularSliderApp = new Swiper('.popular__slider--apparat', {
+  slidesPerView: 3,
+  spaceBetween: 24,
+  slidesPerGroup: 3,
+  pagination: {
+    el: '.popular-pagination',
+    clickable: true
+  },
+  breakpoints: {
+    320 : {
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      slidesPerGroup: 1
+    },
+    769: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      slidesPerGroup: 3,
+    }
+  }
+});
 
 
 const popularSliderLaptop = new Swiper('.popular__slider--laptop', {
@@ -75,7 +96,7 @@ const aboutGalSlider = new Swiper('.about-gallery__slider', {
   breakpoints : {
     320 : {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 16,
       slidesPerGroup: 1
     },
     769 : {
@@ -85,31 +106,29 @@ const aboutGalSlider = new Swiper('.about-gallery__slider', {
     }
   }
 });
-
+const ctaForm = document.querySelector('.cta-form')
 const ctaMain = document.querySelector('.cta__slider--main')
 const nextCta = document.querySelector('.cta-form-next')
 const ctaMainSlider = new Swiper(ctaMain, {
   slidesPerView: 1,
-  navigation: {
-    nextEl: nextCta
-  },
+  // navigation: {
+  //   nextEl: nextCta
+  // },
   pagination: {
     el: ".swiper-pagination-progress--main",
     type: "progressbar",
   },
   on: {
-
-    slideChange: () => {
-
-
+    slideChange : () => {
       if(ctaMainSlider.activeIndex == ctaMain.querySelectorAll('.swiper-slide').length - 1){
         nextCta.setAttribute('type', 'submit')
-        nextCta.textContent = "Отправить"
+
+        nextCta.innerHTML = "<span>Отправить</span>"
+
       } else {
         nextCta.removeAttribute('type')
-        nextCta.textContent = "Далее"
+        nextCta.innerHTML = "<span>Далее</span>"
       }
-
     },
     slideChangeTransitionEnd: () => {
       disBtn(ctaMain)
@@ -117,9 +136,16 @@ const ctaMainSlider = new Swiper(ctaMain, {
   }
 });
 
+nextCta?.addEventListener('click', e => {
+  if(ctaMainSlider.activeIndex != ctaMain.querySelectorAll('.swiper-slide').length - 1){
+    e.preventDefault()
+    ctaMainSlider.slideNext()
+  }
+})
+
 function disBtn(slider){
   const activeSlide = slider.querySelector('.swiper-slide-active')
-  const btn = slider.querySelector('.cta-form__btn')
+  const btn = slider.closest('form').querySelector('.cta-form__btn')
   btn.classList.add('disable')
 
   const inputs = activeSlide.querySelectorAll('input')
@@ -149,9 +175,6 @@ const ctaSec = document.querySelector('.cta__slider--sec')
 const nextCtaSec = document.querySelector('.cta-form-sec-next')
 const ctaSecSlider = new Swiper(ctaSec, {
   slidesPerView: 1,
-  navigation: {
-    nextEl: nextCtaSec
-  },
   pagination: {
     el: ".swiper-pagination-progress--sec",
     type: "progressbar",
@@ -163,10 +186,10 @@ const ctaSecSlider = new Swiper(ctaSec, {
 
       if(ctaSecSlider.activeIndex == ctaSec.querySelectorAll('.swiper-slide').length - 1){
         nextCtaSec.setAttribute('type', 'submit')
-        nextCtaSec.textContent = "Отправить"
+        nextCtaSec.innerHTML = "<span>Отправить</span>"
       } else {
         nextCtaSec.removeAttribute('type')
-        nextCtaSec.textContent = "Далее"
+        nextCtaSec.innerHTML = "<span>Далее</span>"
       }
 
     },
@@ -175,6 +198,14 @@ const ctaSecSlider = new Swiper(ctaSec, {
     }
   }
 });
+
+nextCtaSec?.addEventListener('click', e => {
+  if(ctaSecSlider.activeIndex != ctaSec.querySelectorAll('.swiper-slide').length - 1){
+    e.preventDefault()
+    ctaSecSlider.slideNext()
+  }
+})
+
 if(ctaSec){
   const inputsSec = ctaSec.querySelectorAll('input')
   inputsSec.forEach(el => {

@@ -83,5 +83,9 @@
       position: absolute;
       inset: 0;
     }
+
+    &.active {
+      color: var(--blue-color) !important;
+    }
   }
 }

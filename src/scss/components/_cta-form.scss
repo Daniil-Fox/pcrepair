@@ -44,6 +44,7 @@
   }
 
   &__que {
+    display: block;
     margin: 0;
     margin-bottom: 6rem;
     color: var(--black-color);
@@ -64,6 +65,8 @@
 
   &__input {
     max-width: 43rem;
+
+    font-size: 1.6rem;
   }
 
   &__grid {

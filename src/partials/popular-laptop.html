@@ -1,102 +1,94 @@
 <section class="popular popular-laptop">
   <h2 class="visually-hidden">Title Поломки</h2>
   <div class="line" data-aos="custom-fade-up">
-    <span>Самые часто возникающие поломки ноутбуков</span>
-    <span>Самые часто возникающие поломки ноутбуков</span>
+    <span>Самые часто возникающие поломки телефонов</span>
+    <span>Самые часто возникающие поломки планшетов</span>
   </div>
   <div class="container">
     <div class="popular__buttons">
-      <button class="btn-reset btn popular__btn"><span>Аппаратные поломки ноутбуков</span></button>
-      <button class="btn-reset btn popular__btn"><span>Неисправности программного обеспечения</span></button>
+      <button class="btn-reset btn popular__btn active" data-type="apparat-lap"><span>Аппаратные поломки
+          телефонов</span></button>
+      <button class="btn-reset btn popular__btn" data-type="program-lap"><span>Неисправности программного
+          обеспечения</span></button>
     </div>
-    <div class="swiper popular__slider popular__slider--laptop">
+    <div class="swiper popular__slider popular__slider--laptop active" data-type="apparat-lap">
       <div class="swiper-wrapper popular__wrapper">
         <div class="swiper-slide popular__item popular-item">
-          <h3 class="popular-item__subtitle">Поломки блока питания</h3>
-          <h4 class="popular-item__title">Признаки</h4>
+          <h3 class="popular-item__subtitle">Неисправность<br>зарядки</h3>
+          <h4 class="popular-item__title">Признаки:</h4>
           <ul class="popular-item__list list-reset">
-            <li class="popular-item__item">Ноутбук не заряжается</li>
-            <li class="popular-item__item">Не может включиться</li>
-            <li class="popular-item__item">Не работает индикатор заряда когда ноутбук выключен</li>
-            <li class="popular-item__item">На разъеме нет напряжения</li>
+            <li class="popular-item__item">Телефон не заряжается</li>
+            <li class="popular-item__item">Приходится нажимать на разьем, чтобы пошла зарядка</li>
+            <li class="popular-item__item">Заряжается медленнее обычного</li>
+            <li class="popular-item__item">Телефон не подает признаков жизни</li>
           </ul>
         </div>
         <div class="swiper-slide popular__item popular-item">
-          <h3 class="popular-item__subtitle">Не работает клавиатура</h3>
-          <h4 class="popular-item__title">Признаки</h4>
+          <h3 class="popular-item__subtitle">Неисправность дисплея, сенсорного модуля</h3>
+          <h4 class="popular-item__title">Признаки:</h4>
           <ul class="popular-item__list list-reset">
-            <li class="popular-item__item">Не срабатывают или залипают клавиши</li>
-            <li class="popular-item__item">Когда нажимаете букву, на экране появляется другая</li>
-            <li class="popular-item__item">Курсор перескакивает в новое место</li>
+            <li class="popular-item__item">Телефон не реагирует на нажатие</li>
+            <li class="popular-item__item">Сенсор теряет нажатие в определенных местах</li>
+            <li class="popular-item__item">Пятна, полосы на изображении</li>
+            <li class="popular-item__item">Тусклая подсветка или ее отсутствие</li>
           </ul>
         </div>
         <div class="swiper-slide popular__item popular-item">
-          <h3 class="popular-item__subtitle">Неполадки с жестким диском</h3>
-          <h4 class="popular-item__title">Признаки</h4>
+          <h3 class="popular-item__subtitle">Неисправность материнской платы</h3>
+          <h4 class="popular-item__title">Признаки:</h4>
           <ul class="popular-item__list list-reset">
-            <li class="popular-item__item">Система не загружается или делает это очень медленно</li>
-            <li class="popular-item__item">Ошибки в системе или программах, зависания</li>
-            <li class="popular-item__item">Циклическая перезагрузка</li>
+            <li class="popular-item__item">Телефон не включается или висит на заставке</li>
+            <li class="popular-item__item">Телефон не подает признаков жизни, не реагирует на кнопку включения</li>
+            <li class="popular-item__item">Не работает часть функций телефона, сеть, звук, микрофон</li>
+            <li class="popular-item__item">Телефон очень быстро разряжается</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination popular-laptop-pagination"></div>
+    </div>
+    <div class="swiper popular__slider popular__slider--laptop" data-type="program-lap">
+      <div class="swiper-wrapper popular__wrapper">
+        <div class="swiper-slide popular__item popular-item">
+          <h3 class="popular-item__subtitle">Телефон не запускается,<br> но звук есть</h3>
+          <h4 class="popular-item__title">Признаки:</h4>
+          <ul class="popular-item__list list-reset">
+            <li class="popular-item__item">Не регулируется яркость</li>
+            <li class="popular-item__item">Горит светодиод, сигнализирующий об ошибке</li>
+            <li class="popular-item__item">Выскакивает черный экран и случайные символы</li>
+          </ul>
+        </div>
+        <div class="swiper-slide popular__item popular-item">
+          <h3 class="popular-item__subtitle">Телефон запустился,<br>НО</h3>
+          <h4 class="popular-item__title">Признаки:</h4>
+          <ul class="popular-item__list list-reset">
+            <li class="popular-item__item">Меню телефона отзывается некорректно</li>
+            <li class="popular-item__item">Нет возможности позвонить или принять вызов</li>
+            <li class="popular-item__item">Невозможно открыть интернет</li>
+          </ul>
+        </div>
+        <div class="swiper-slide popular__item popular-item">
+          <h3 class="popular-item__subtitle">Телефон глючит и<br>выдает ошибки</h3>
+          <h4 class="popular-item__title">Признаки:</h4>
+          <ul class="popular-item__list list-reset">
+            <li class="popular-item__item">Пропали определенные приложения</li>
+            <li class="popular-item__item">Постоянно выскакивает рекламные ролики</li>
+            <li class="popular-item__item">Пишет, что не хватает памяти</li>
           </ul>
         </div>
 
         <div class="swiper-slide popular__item popular-item">
-          <h3 class="popular-item__subtitle">Поломки блока питания</h3>
-          <h4 class="popular-item__title">Признаки</h4>
+          <h3 class="popular-item__subtitle">Телефон зависает</h3>
+          <h4 class="popular-item__title">Признаки:</h4>
           <ul class="popular-item__list list-reset">
-            <li class="popular-item__item">Ноутбук не заряжается</li>
-            <li class="popular-item__item">Не может включиться</li>
-            <li class="popular-item__item">Не работает индикатор заряда когда ноутбук выключен</li>
-            <li class="popular-item__item">На разъеме нет напряжения</li>
+            <li class="popular-item__item">Телефон завис на заставке и не загружается дальше</li>
+            <li class="popular-item__item">Не может полноценно запуститься</li>
+            <li class="popular-item__item">Не заходит в приложения</li>
           </ul>
         </div>
-        <div class="swiper-slide popular__item popular-item">
-          <h3 class="popular-item__subtitle">Не работает клавиатура</h3>
-          <h4 class="popular-item__title">Признаки</h4>
-          <ul class="popular-item__list list-reset">
-            <li class="popular-item__item">Не срабатывают или залипают клавиши</li>
-            <li class="popular-item__item">Когда нажимаете букву, на экране появляется другая</li>
-            <li class="popular-item__item">Курсор перескакивает в новое место</li>
-          </ul>
-        </div>
-        <div class="swiper-slide popular__item popular-item">
-          <h3 class="popular-item__subtitle">Неполадки с жестким диском</h3>
-          <h4 class="popular-item__title">Признаки</h4>
-          <ul class="popular-item__list list-reset">
-            <li class="popular-item__item">Система не загружается или делает это очень медленно</li>
-            <li class="popular-item__item">Ошибки в системе или программах, зависания</li>
-            <li class="popular-item__item">Циклическая перезагрузка</li>
-          </ul>
-        </div>
-
-        <div class="swiper-slide popular__item popular-item">
-          <h3 class="popular-item__subtitle">Поломки блока питания</h3>
-          <h4 class="popular-item__title">Признаки</h4>
-          <ul class="popular-item__list list-reset">
-            <li class="popular-item__item">Ноутбук не заряжается</li>
-            <li class="popular-item__item">Не может включиться</li>
-            <li class="popular-item__item">Не работает индикатор заряда когда ноутбук выключен</li>
-            <li class="popular-item__item">На разъеме нет напряжения</li>
-          </ul>
-        </div>
-        <div class="swiper-slide popular__item popular-item">
-          <h3 class="popular-item__subtitle">Не работает клавиатура</h3>
-          <h4 class="popular-item__title">Признаки</h4>
-          <ul class="popular-item__list list-reset">
-            <li class="popular-item__item">Не срабатывают или залипают клавиши</li>
-            <li class="popular-item__item">Когда нажимаете букву, на экране появляется другая</li>
-            <li class="popular-item__item">Курсор перескакивает в новое место</li>
-          </ul>
-        </div>
-        <div class="swiper-slide popular__item popular-item">
-          <h3 class="popular-item__subtitle">Неполадки с жестким диском</h3>
-          <h4 class="popular-item__title">Признаки</h4>
-          <ul class="popular-item__list list-reset">
-            <li class="popular-item__item">Система не загружается или делает это очень медленно</li>
-            <li class="popular-item__item">Ошибки в системе или программах, зависания</li>
-            <li class="popular-item__item">Циклическая перезагрузка</li>
-          </ul>
-        </div>
+        <div class="swiper-slide popular__item popular-item popular-item--empty"></div>
+        <div class="swiper-slide popular__item popular-item popular-item--empty"></div>
 
       </div>
 

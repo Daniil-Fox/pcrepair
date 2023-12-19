@@ -21,7 +21,7 @@
       @include('partials/partners.html')
       @include('partials/cases.html')
       <div class="container">
-        <form class="cta__form form cta-form">
+        <form class="cta__form form cta-form cta-form__secondary" method="POST">
           <h3 class="cta-form__title">
             Рассчитайте стоимость ремонта за 1 мин. Просто ответьте на 5 вопросов
           </h3>
@@ -31,25 +31,29 @@
               <div class="swiper-slide">
                 <div class="cta-form__wrapper">
                   <div class="cta-form__board">
-                    <h4 class="cta-form__que">Какое устройство сломалось?</h4>
+                    <span class="cta-form__que">Какое устройство сломалось?</span>
                     <div class="cta-form__grid">
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-type" id="radio-type-sec-1" class="form__radio">
+                        <input type="radio" name="Device_Title" id="radio-type-sec-1" value="Компьютер"
+                          class="form__radio">
                         <span class="form__fake-radio"></span>
                         Компьютер
                       </label>
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-type" id="radio-type-sec-2" class="form__radio">
+                        <input type="radio" name="Device_Title" id="radio-type-sec-2" value="Ноутбук"
+                          class="form__radio">
                         <span class="form__fake-radio"></span>
                         Ноутбук
                       </label>
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-type" id="radio-type-sec-3" class="form__radio">
+                        <input type="radio" name="Device_Title" id="radio-type-sec-3" value="Телефон"
+                          class="form__radio">
                         <span class="form__fake-radio"></span>
-                        Моноблок
+                        Телефон
                       </label>
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-type" id="radio-type-sec-4" class="form__radio">
+                        <input type="radio" name="Device_Title" id="radio-type-sec-4" value="Другое"
+                          class="form__radio">
                         <span class="form__fake-radio"></span>
                         Другое
                       </label>
@@ -61,40 +65,47 @@
               <div class="swiper-slide">
                 <div class="cta-form__wrapper">
                   <div class="cta-form__board">
-                    <h4 class="cta-form__que">В чем проблема?</h4>
+                    <span class="cta-form__que">В чем проблема?</span>
                     <div class="cta-form__grid">
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-prob" id="radio-sec-prob-1" class="form__radio">
+                        <input type="radio" name="Problem_with_pc" id="radio-sec-prob-1" value="Не включается"
+                          class="form__radio">
                         <span class="form__fake-radio"></span>
                         Не включается
                       </label>
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-prob" id="radio-sec-prob-2" class="form__radio">
+                        <input type="radio" name="Problem_with_pc" id="radio-sec-prob-2" value="Сам выключается"
+                          class="form__radio">
                         <span class="form__fake-radio"></span>
                         Сам выключается
                       </label>
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-prob" id="radio-sec-prob-3" class="form__radio">
+                        <input type="radio" name="Problem_with_pc" id="radio-sec-prob-3" value="Белый экран"
+                          class="form__radio">
                         <span class="form__fake-radio"></span>
                         Белый экран
                       </label>
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-prob" id="radio-sec-prob-4" class="form__radio">
+                        <input type="radio" name="Problem_with_pc" id="radio-sec-prob-4" value="Другая проблема"
+                          class="form__radio">
                         <span class="form__fake-radio"></span>
                         Другая проблема
                       </label>
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-prob" id="radio-sec-prob-5" class="form__radio">
+                        <input type="radio" name="Problem_with_pc" id="radio-sec-prob-5"
+                          value="Включается, но нет изображения" class="form__radio">
                         <span class="form__fake-radio"></span>
                         Включается, но нет изображения
                       </label>
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-prob" id="radio-sec-prob-6" class="form__radio">
+                        <input type="radio" name="Problem_with_pc" id="radio-sec-prob-6" value="Синий экран"
+                          class="form__radio">
                         <span class="form__fake-radio"></span>
                         Синий экран
                       </label>
                       <label class="cta-form__label">
-                        <input type="radio" name="radio-sec-prob" id="radio-sec-prob-7" class="form__radio">
+                        <input type="radio" name="Problem_with_pc" id="radio-sec-prob-7" value="Черный экран"
+                          class="form__radio">
                         <span class="form__fake-radio"></span>
                         Черный экран
                       </label>
@@ -106,9 +117,9 @@
                 <div class="cta-form__wrapper">
                   <div class="cta-form__board">
                     <label>
-                      <h4 class="cta-form__que">Укажите бренд и модель Вашего устройства</h4>
-                      <input type="text" class="form__input cta-form__input" name="input-sec-brand-pc"
-                        id="input-sec-brand-pc" placeholder="Модель">
+                      <span class="cta-form__que">Укажите бренд и модель Вашего устройства</span>
+                      <input type="text" class="form__input cta-form__input" name="Brand_Model" id="input-sec-brand-pc"
+                        placeholder="Модель">
                     </label>
                   </div>
                 </div>
@@ -117,8 +128,8 @@
                 <div class="cta-form__wrapper">
                   <div class="cta-form__board">
                     <label>
-                      <h4 class="cta-form__que">В течение какого времени эксплуатируется устройство?</h4>
-                      <input type="text" class="form__input cta-form__input" name="input-sec-time-pc"
+                      <span class="cta-form__que">В течение какого времени эксплуатируется устройство?</span>
+                      <input type="text" class="form__input cta-form__input" name="Range_of_using"
                         id="input-sec-time-pc" placeholder="Текст">
                     </label>
                   </div>
@@ -127,34 +138,35 @@
               <div class="swiper-slide">
                 <div class="cta-form__wrapper">
                   <div class="cta-form__board">
-                    <label>
-                      <h4 class="cta-form__que">Куда Вам сообщить цену ремонта?</h4>
-                      <div class="cta-form__grid cta-form__grid--gap">
-                        <label class="cta-form__label">
-                          <input type="radio" name="radio-sec-contact" id="radio-sec-contact-1" class="form__radio">
-                          <span class="form__fake-radio"></span>
-                          По телефону
-                        </label>
-                        <label class="cta-form__label">
-                          <input type="radio" name="radio-sec-contact" id="radio-sec-contact-2" class="form__radio">
-                          <span class="form__fake-radio"></span>
-                          WhatsApp
-                        </label>
-                        <label class="cta-form__label">
-                          <input type="radio" name="radio-sec-contact" id="radio-sec-contact-3" class="form__radio">
-                          <span class="form__fake-radio"></span>
-                          Telegram
-                        </label>
-                      </div>
-                      <input type="tel" class="form__input cta-form__input" data-type="tel" name="input-sec-contact-tel"
-                        id="input-sec-contact-tel" placeholder="Номер телефона">
-                    </label>
+                    <span class="cta-form__que">Куда Вам сообщить цену ремонта?</span>
+                    <div class="cta-form__grid cta-form__grid--gap">
+                      <label class="cta-form__label">
+                        <input type="radio" name="Way of contact" id="radio-sec-contact-1" value="По телефону"
+                          class="form__radio">
+                        <span class="form__fake-radio"></span>
+                        По телефону
+                      </label>
+                      <label class="cta-form__label">
+                        <input type="radio" name="Way of contact" id="radio-sec-contact-2" value="WhatsApp"
+                          class="form__radio">
+                        <span class="form__fake-radio"></span>
+                        WhatsApp
+                      </label>
+                      <label class="cta-form__label">
+                        <input type="radio" name="Way of contact" id="radio-sec-contact-3" value="Telegram"
+                          class="form__radio">
+                        <span class="form__fake-radio"></span>
+                        Telegram
+                      </label>
+                    </div>
+                    <input type="tel" class="form__input cta-form__input" data-type="tel" name="Contact Number"
+                      id="input-sec-contact-tel" placeholder="Номер телефона">
                   </div>
                 </div>
               </div>
             </div>
-            <button class="cta-form__btn btn btn-reset cta-form-sec-next"><span>Далее</span></button>
           </div>
+          <button class="cta-form__btn btn btn-reset cta-form-sec-next"><span>Далее</span></button>
         </form>
       </div>
     </main>

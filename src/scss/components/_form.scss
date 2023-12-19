@@ -95,6 +95,8 @@
     border: none;
     border-bottom: .1rem solid #9F9F9F;
     background: var(--white-color);
+    font-size: 2rem;
+    color: #9F9F9F;
 
     @include mobile {
       height: 4.8rem;

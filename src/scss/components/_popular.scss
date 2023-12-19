@@ -15,11 +15,19 @@
 
   &__slider {
     padding: 0 0.5rem;
+    padding-top: 6rem;
+    display: none;
+
+    &.active {
+      display: block;
+    }
 
     @include mobile {
+      padding-top: 3.2rem;
       margin-right: -1.5rem;
       margin-left: -1.5rem;
-      padding: 0 1.5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
 
@@ -48,17 +56,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 6rem;
+    // margin-bottom: 6rem;
 
     @include mobile {
       flex-wrap: wrap;
-      margin-bottom: 3.2rem;
+      // margin-bottom: 3.2rem;
     }
   }
 
   &__btn {
     flex: 1;
     padding: 2.4rem 9.6rem;
+
+    &.active {
+      span {
+        color: var(--white-color);
+      }
+
+      &::before {
+        transform: translateY(0);
+      }
+    }
 
     &:not(:last-child) {
       border-right: none;
@@ -90,9 +108,13 @@
   border: .1rem solid var(--blue-color);
   box-shadow: 0rem .4rem 2.5rem 0rem rgba(0, 0, 0, 0.10);
 
+  &--empty {
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
 
   &__subtitle {
-    max-width: 27.6rem;
     margin: 0;
     margin-bottom: 1.2rem;
     color: var(--blue-color);

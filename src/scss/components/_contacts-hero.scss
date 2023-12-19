@@ -15,6 +15,7 @@
 }
 
 .contacts {
+  margin-top: 8rem;
   display: flex;
   align-items: center;
   padding: 6rem;
@@ -23,6 +24,7 @@
   box-shadow: 0rem .6rem 2rem 0rem rgba(4, 0, 48, 0.16);
 
   @include mobile {
+    margin-top: 2rem;
     gap: 4rem;
     padding: 2rem;
     padding-top: 4rem;
