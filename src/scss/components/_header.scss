@@ -56,6 +56,11 @@
         fill: var(--white-color);
       }
 
+      .path-blue {
+        transition: fill .3s ease-out;
+        fill: var(--blue-color);
+      }
+
       @include mobile {
         height: 2.5rem;
         width: 9.7rem;
@@ -88,6 +93,11 @@
         .path-wh {
           fill: var(--black-color);
         }
+
+        .path-blue {
+          fill: var(--blue-color);
+        }
+
       }
     }
 
@@ -222,7 +232,8 @@
   }
 
   &__search {
-
+    display: flex;
+    align-items: center;
     width: 48.2rem;
     padding: 2rem 3.2rem;
     border-top: .1rem solid rgba(255, 255, 255, 0.24);
@@ -281,6 +292,7 @@
     width: 55.9rem;
     padding: 2.4rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-top: .1rem solid rgba(255, 255, 255, 0.24);
@@ -288,8 +300,17 @@
     position: relative;
     overflow: hidden;
 
-    &>a {
-      position: relative;
+
+    &-row {
+      display: flex;
+      align-items: center;
+
+
+
+    }
+
+    a {
+      position: static;
       z-index: 5;
       color: var(--white-color);
       font-family: 'Plus Jakarta Sans';
@@ -301,8 +322,20 @@
       &::before {
         content: "";
         position: absolute;
+        z-index: 2;
         inset: 0;
       }
+    }
+
+    span {
+      position: relative;
+      z-index: 5;
+      color: var(--white-color);
+      font-family: 'Noto Sans JP';
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
     }
 
     .call-icon {
@@ -332,7 +365,12 @@
     }
 
     @include hover {
-      &>a {
+
+      a {
+        color: var(--blue-color);
+      }
+
+      span {
         color: var(--blue-color);
       }
 
@@ -477,6 +515,8 @@
   .header__logo {
     svg {
       fill: var(--black-color);
+
+
     }
 
     border-top: .1rem solid #E1E1E1;
@@ -494,7 +534,11 @@
       border-bottom-color: var(--black-color);
 
       svg {
-        fill: var(--white-color)
+        fill: var(--white-color) !important;
+
+        .path-blue {
+          fill: var(--white-color) !important;
+        }
       }
     }
   }
@@ -584,7 +628,8 @@
       }
     }
 
-    a {
+    a,
+    span {
       color: var(--black-color);
     }
 
@@ -593,7 +638,9 @@
     }
 
     @include hover {
-      &>a {
+
+      a,
+      span {
         color: var(--white-color);
       }
 
